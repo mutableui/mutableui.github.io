@@ -26,7 +26,7 @@ $(window).on('resize', f);
 
 
 
-$('#button').click(function(e){
+$('body').on("click", "#button", (function(e){
 e.preventDefault;
 $('body,html').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove', function(e){
             if ( e.which > 0 || e.type == "mousedown" || e.type == "mousewheel" || e.type == "touchmove"){
@@ -52,14 +52,29 @@ else {
 $('#chatList').find(' > li:nth-last-child(1)').before("<li class=\"\"><div class=\""+data[counter].bubbleType+" popout "+popType+"\"><"+ data[counter].textSize +">"+data[counter].textContent+"</"+ data[counter].textSize +"></div></li><div style=\"clear:both\"></div>");
 }
 
-counter++;
+var buttonClass;
+var buttonDisplay;
 
+if (data[counter].buttonContent.isRoundButton == 1) {
+  buttonClass = "rdButton";
+  buttonDisplay = "<img src=\"images/"+data[counter].buttonContent.bImg+".png\"/>"
+}
+else {
+  buttonClass = "sqButton";
+  buttonDisplay = data[counter].buttonContent.bText;
+}
+
+$('#button').fadeOut(500, function() {
+    $(this).replaceWith("<a id=\"button\" class=\""+buttonClass+"\">"+buttonDisplay+"</a>").fadeIn(500);
+});
+
+counter++;
 
 /*SCROLLING FUNCTION*/
    var section = $('#chatList li').last();
        $("html, body").animate({
            scrollTop: $(section).offset().top
-       }, 1000);
+       }, 700);
 
        return false;
-});
+}));

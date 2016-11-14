@@ -190,7 +190,7 @@ a.rdButton {
   border-radius: 50%;
 }
 
-a.rdButton img {
+#button img {
   width: 60%;
   height: 60%;
   padding: 20%;
@@ -242,6 +242,6 @@ a.rdButton img {
 
 @media only screen and (max-width : 480px) {
  body {
-   /*font-size: 14px;*/
+   font-size: 14px;
  }
 }
