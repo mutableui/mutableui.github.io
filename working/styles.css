@@ -1,0 +1,247 @@
+/*FONTS*/
+/*Titling Gothic*/
+@font-face {
+	font-family: 'TitlingGothicFB Normal';
+	src: url('fonts/TitlingGothicFBNormal-Medium.eot');
+	src: url('fonts/TitlingGothicFBNormal-Medium.eot?#iefix') format('embedded-opentype'),
+		url('fonts/TitlingGothicFBNormal-Medium.woff') format('woff'),
+		url('fonts/TitlingGothicFBNormal-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TitlingGothicFB Normal';
+	src: url('fonts/TitlingGothicFBNormal-Bold.eot');
+	src: url('fonts/TitlingGothicFBNormal-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/TitlingGothicFBNormal-Bold.woff') format('woff'),
+		url('fonts/TitlingGothicFBNormal-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TitlingGothicFB Skyline';
+	src: url('fonts/TitlingGothicFBSkyline-Bold.eot');
+	src: url('fonts/TitlingGothicFBSkyline-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/TitlingGothicFBSkyline-Bold.woff') format('woff'),
+		url('fonts/TitlingGothicFBSkyline-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/*THEINHARDT*/
+@font-face {
+	font-family: 'Theinhardt';
+	src: url('fonts/Theinhardt-Regular.eot');
+	src: url('fonts/Theinhardt-Regular.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Theinhardt-Regular.woff') format('woff'),
+		url('fonts/Theinhardt-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Theinhardt';
+	src: url('fonts/Theinhardt-RegularItalic.eot');
+	src: url('fonts/Theinhardt-RegularItalic.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Theinhardt-RegularItalic.woff') format('woff'),
+		url('fonts/Theinhardt-RegularItalic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Theinhardt';
+	src: url('fonts/Theinhardt-Bold.eot');
+	src: url('fonts/Theinhardt-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Theinhardt-Bold.woff') format('woff'),
+		url('fonts/Theinhardt-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Theinhardt';
+	src: url('fonts/Theinhardt-BoldItalic.eot');
+	src: url('fonts/Theinhardt-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Theinhardt-BoldItalic.woff') format('woff'),
+		url('fonts/Theinhardt-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+body {
+  background: #FED700;
+  font-family: 'Theinhardt';
+  font-weight: normal;
+  height: 100%;
+  font-size: 23px;
+  line-height: 1.174em;
+  color: #3F2B25;
+}
+
+h1 {
+  font-size: 6.5em;
+  font-family: 'TitlingGothicFB Skyline', sans-serif;
+  font-weight: bold;
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+
+#chatList {
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+#chatList li {
+  width: 100%;
+  z-index: 1;
+}
+
+#chatList li .speech, #chatList li .response {
+  -webkit-border-radius: 0.652em;
+  -moz-border-radius: 0.652em;
+  border-radius: 0.652em;
+  border: 1px solid #D1A61B;
+  margin: 0.435em 0;
+  padding: 0 .8em;
+  display: inline-block;
+}
+
+#chatList li .response {
+  background: #FFEF21;
+  max-width: 66%;
+}
+
+#chatList li .speech {
+  line-height: 2.174rem;
+  display: inline-block;
+  background: #ffffff;
+  float: right;
+  position: relative;
+}
+
+.speech:after, .speech:before  {
+    display: block;
+    border-bottom: 1.304em solid transparent;
+    border-right: 2.174em solid #fff;
+    bottom: -10px;
+    content: '';
+    position: absolute;
+    right: 0;
+}
+
+.speech:before  {
+    border-right: 2.217em solid #D1A61B;
+    bottom: -0.5em;
+    right: -1px;
+    z-index: -1;
+}
+
+
+#chatList li p {
+  padding: 1.1em 0 .783em 0;
+}
+
+#chatList li h2 {
+  font-size: 1.478em;
+  line-height: 1.478em;
+  padding: .6em 0 .2em 0;
+  font-weight: bold;
+}
+
+a.sqButton, a.rdButton {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  background: #3F2B25;
+  color: #FFEF21;
+  box-shadow: 1px 1px 1px rgba(63, 43, 37, 0.3);
+  margin: .87em 0;
+  cursor: pointer;
+  transition: color .35s ease-in-out;
+  user-select: none;
+}
+
+a.sqButton {
+  font-size: 1.478em;
+  line-height: 1em;
+  padding: .765em .441em .529em;
+  font-weight: bold;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+a.sqButton:hover {
+  color: #ffffff;
+}
+
+a.rdButton {
+  width: 4.783em;
+  height: 4.783em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+a.rdButton img {
+  width: 60%;
+  height: 60%;
+  padding: 20%;
+}
+
+.big-item {
+  margin: 0.435em 0;
+}
+
+.big-cont {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  display: block;
+  margin: 0 ;
+}
+
+.big-cont h1 {
+  margin: .1em;
+}
+
+
+/* ############## ANIMATION #################### */
+.popoutR {
+  transform-origin: right bottom;
+}
+
+.popoutL {
+  transform-origin: left center;
+}
+
+.popout {
+    animation: popout .25s ease-in;
+    -webkit-animation: popout .25s ease;
+}
+@keyframes popout {
+    from{opacity:0; transform:scale(0)}
+    75%{opacity:100; transform:scale(1.1)}
+    to{opacity:100; transform:scale(1)}
+}
+@-webkit-keyframes popout {
+    from{-webkit-opacity:0; -webkit-transform:scale(0)}
+    75%{-webkit-opacity:100; -webkit-transform:scale(1.1)}
+    to{-webkit-opacity:100; -webkit-transform:scale(1)}
+}
+
+
+/* ############### RESPONSIVE #################### */
+
+@media only screen and (max-width : 480px) {
+ body {
+   font-size: 14px;
+ }
+}
