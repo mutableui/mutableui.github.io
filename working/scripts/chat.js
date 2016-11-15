@@ -41,9 +41,13 @@ $('body,html').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup touc
 $('#button').fadeOut(100);
 /*VISIBLE FUNCTIONS GO HERE*/
 if (data[counter].bigHead == 1) {
-  $('#chatList').find(' > li:nth-last-child(1)').before("<li class=\"big-item\" style = \"height:"+bigHeadHeight+"\"; ><div class=\"big-cont\"><h1>"+data[counter].textContent+"</h1></div></li><div style=\"clear:both\"></div>");
+  var vidDisplay = "<source src=\"vid/"+data[counter].vidContent+".mp4\" type=\"video/mp4\">"
+
+  $('#chatList').find(' > li:nth-last-child(1)').before("<li id=\""+data[counter].vidContent+"\" class=\"big-item\" style = \"height:"+bigHeadHeight+"\"; ><div class=\"big-cont\"><h1>"+data[counter].textContent+"</h1></div></li><div style=\"clear:both\"></div>");
   $('.big-item').css('height', bigHeadHeight);
   $('.big-item').css('margin-left', bigOffset);
+
+  $('#bgvid').html(vidDisplay);
 
   var section = $('#chatList li').last();
       $("html, body").animate({
@@ -67,7 +71,7 @@ function postString(callback) {
   var paraType = [];
 
   for(i = 0; i < data[dataIndex].textContent.length; i++){
-    if (data[dataIndex].textContent[i].length < 30) {
+    if (data[dataIndex].textContent[i].length < 20) {
       paraType.push("h2");
     }
     else {
@@ -85,13 +89,13 @@ function postString(callback) {
               $("html, body").animate({
                   scrollTop: $(section).offset().top
               }, 700);
-          }, 1000 * i);
+          }, 1500 * i);
       }(i));
 
   };
   setTimeout(function(){
     callback();
-  }, 1000*data[dataIndex].textContent.length);
+  }, 1500*data[dataIndex].textContent.length);
 
 }
 
@@ -108,10 +112,6 @@ else {
   buttonDisplay = data[counter].buttonContent.bText;
 }
   $('#button').removeClass().addClass(buttonClass).html(buttonDisplay).fadeIn(500);
-  //$('#button').replaceWith("<a id=\"button\" class=\""+buttonClass+"\">"+buttonDisplay+"</a>")
-  //$('#button').hide;
-  //$('#button').fadeIn('slow');
-
   counter++;
 }
 

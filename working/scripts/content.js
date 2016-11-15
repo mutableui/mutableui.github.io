@@ -6,31 +6,37 @@
 
 var data = [
   { "bigHead": 1,
-    "textContent": "Get to the point...",
+    "textContent": "...nose?",
+    "vidContent": "",
     "buttonContent": {
       "isRoundButton": 0,
-      "bText": "Some text here",
-      "bImg": "pig-nose"
+      "bText": "nose?",
+      //"bImg": "pig-nose"
     }
   },
 
   { "bigHead": 0,
     "textContent": [
-      "Get to the point...",
-      "Get to the point...This is a really long sentence that will hopefully trigger the small text.",
-      "Get to the point...",
-      "Get to the point...",
+      "nose?",
+      "Ears, eyes, mouth, hands...",
+      "Like all sensory organs, the nose plays a vital role in how you perceive your environment.",
+      "Yes you.",
+      "Who are you?",
     ],
     "buttonContent": {
       "isRoundButton": 0,
-      "bText": "Some text here",
+      "bText": "who are <i>YOU</i>?",
       "bImg": "pig-nose"
     }
   },
 
   { "bigHead": 0,
     "textContent": [
-      "A new one.",
+      "who are <i>YOU</i>?",
+      "I am a constructed narrative meant to forward an idea. I wish I were real.",
+      "But you…",
+      "You are you.",
+      "A unique island universe of experiences and knowledge unlike any other."
     ],
     "buttonContent": {
       "isRoundButton": 1,

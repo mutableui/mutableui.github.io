@@ -81,6 +81,10 @@ body {
   color: #3F2B25;
 }
 
+i {
+  font-style: italic;
+}
+
 h1 {
   font-size: 6.5em;
   font-family: 'TitlingGothicFB Skyline', sans-serif;
@@ -99,7 +103,6 @@ h1 {
 
 #chatList li {
   width: 100%;
-  z-index: 1;
 }
 
 #chatList li .speech, #chatList li .response {
@@ -123,6 +126,7 @@ h1 {
   background: #ffffff;
   float: right;
   position: relative;
+
 }
 
 .speech:after, .speech:before  {
@@ -135,7 +139,8 @@ h1 {
     right: 0;
 }
 
-.speech:before  {
+
+#chatList li .speech:before  {
     border-right: 2.217em solid #D1A61B;
     bottom: -0.5em;
     right: -1px;
@@ -240,6 +245,26 @@ a.rdButton {
   display: none;
   height: 100%;
 }
+
+
+/* ############# VIDEO BG ###################### */
+video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    /*background: url(polina.jpg) no-repeat;*/
+    background-size: cover;
+}
+
 
 
 /* ############## ANIMATION #################### */
