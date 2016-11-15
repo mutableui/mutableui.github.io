@@ -57,15 +57,42 @@ if (data[counter].bigHead == 1) {
 
 
 else {
-  var popType;
-  if (data[counter].bubbleType == "speech") {
-    popType = "popoutR";
-  }
-  else {
-    popType = "popoutL";
-  }
 
-$('#chatList').find(' > li:nth-last-child(1)').before("<li class=\"\"><div class=\""+data[counter].bubbleType+" popout "+popType+"\"><"+ data[counter].textSize +">"+data[counter].textContent+"</"+ data[counter].textSize +"></div></li><div style=\"clear:both\"></div>");
+postString(function() {afterPost()});
+
+} //end else
+
+function postString(callback) {
+  var dataIndex = counter;
+  var paraType = [];
+
+  for(i = 0; i < data[dataIndex].textContent.length; i++){
+    if (data[dataIndex].textContent[i].length < 30) {
+      paraType.push("h2");
+    }
+    else {
+      paraType.push("p");
+    }
+      (function(i){
+          setTimeout(function(){
+            if (i==0) {
+                $('#chatList').find(' > li:nth-last-child(1)').before("<li class=\"\"><div class=\"speech popout popoutR\"><"+ paraType[i] +">"+data[dataIndex].textContent[i]+"</"+ paraType[i] +"></div></li><div style=\"clear:both\"></div>");
+            }
+            else {
+                $('#chatList').find(' > li:nth-last-child(1)').before("<li class=\"\"><div class=\"response popout popoutL\"><"+ paraType[i] +">"+data[dataIndex].textContent[i]+"</"+ paraType[i] +"></div></li><div style=\"clear:both\"></div>");
+              }
+          var section = $('#chatList li').last();
+              $("html, body").animate({
+                  scrollTop: $(section).offset().top
+              }, 700);
+          }, 1000 * i);
+      }(i));
+
+  };
+  setTimeout(function(){
+    callback();
+  }, 1000*data[dataIndex].textContent.length);
+
 }
 
 function afterPost() {
