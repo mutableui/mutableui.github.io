@@ -5,14 +5,36 @@
 
 
 var data = [
-  { "bigHead": 0,
+  { "bigHead": 1,
     "textContent": "Get to the point...",
-    "textSize": "h2",
-    "bubbleType": "speech",
+    "buttonContent": {
+      "isRoundButton": 0,
+      "bText": "Some text here",
+      "bImg": "pig-nose"
+    }
+  },
+
+  { "bigHead": 0,
+    "textContent": [
+      "Get to the point...",
+      "Get to the point...This is a really long sentence that will hopefully trigger the small text.",
+      "Get to the point...",
+      "Get to the point...",
+    ],
+    "buttonContent": {
+      "isRoundButton": 0,
+      "bText": "Some text here",
+      "bImg": "pig-nose"
+    }
+  },
+
+  { "bigHead": 0,
+    "textContent": [
+      "A new one.",
+    ],
     "buttonContent": {
       "isRoundButton": 1,
-      "isBubbleButton": 0,
-      "bText": "Some text here",
+      "bText": "Some text here 2",
       "bImg": "pig-nose"
     }
   },

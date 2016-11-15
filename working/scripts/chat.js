@@ -14,6 +14,7 @@ var f = (function () {
       $('.big-item').css('height', bigHeadHeight);
 
    windowWidth = $(window).width();
+   windowHeight = $(window).height();
 
    chatWidth = $('#chatList').width();
 
@@ -24,7 +25,11 @@ var f = (function () {
 $(document).ready(f);
 $(window).on('resize', f);
 
+$('body').on("click", ".firstButton", (function(){
 
+$('#splashPadder').height(windowHeight).show();
+
+}));
 
 $('body').on("click", "#button", (function(e){
 e.preventDefault;
@@ -33,13 +38,24 @@ $('body,html').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup touc
                 $("html,body").stop();
             }
         })
-
+$('#button').fadeOut(100);
 /*VISIBLE FUNCTIONS GO HERE*/
 if (data[counter].bigHead == 1) {
   $('#chatList').find(' > li:nth-last-child(1)').before("<li class=\"big-item\" style = \"height:"+bigHeadHeight+"\"; ><div class=\"big-cont\"><h1>"+data[counter].textContent+"</h1></div></li><div style=\"clear:both\"></div>");
   $('.big-item').css('height', bigHeadHeight);
   $('.big-item').css('margin-left', bigOffset);
+
+  var section = $('#chatList li').last();
+      $("html, body").animate({
+          scrollTop: $(section).offset().top
+      }, 700);
+
+    setTimeout(function(){
+      afterPost();
+    }, 500);
 }
+
+
 else {
   var popType;
   if (data[counter].bubbleType == "speech") {
@@ -52,6 +68,7 @@ else {
 $('#chatList').find(' > li:nth-last-child(1)').before("<li class=\"\"><div class=\""+data[counter].bubbleType+" popout "+popType+"\"><"+ data[counter].textSize +">"+data[counter].textContent+"</"+ data[counter].textSize +"></div></li><div style=\"clear:both\"></div>");
 }
 
+function afterPost() {
 var buttonClass;
 var buttonDisplay;
 
@@ -63,18 +80,13 @@ else {
   buttonClass = "sqButton";
   buttonDisplay = data[counter].buttonContent.bText;
 }
+  $('#button').removeClass().addClass(buttonClass).html(buttonDisplay).fadeIn(500);
+  //$('#button').replaceWith("<a id=\"button\" class=\""+buttonClass+"\">"+buttonDisplay+"</a>")
+  //$('#button').hide;
+  //$('#button').fadeIn('slow');
 
-$('#button').fadeOut(500, function() {
-    $(this).replaceWith("<a id=\"button\" class=\""+buttonClass+"\">"+buttonDisplay+"</a>").fadeIn(500);
-});
-
-counter++;
-
-/*SCROLLING FUNCTION*/
-   var section = $('#chatList li').last();
-       $("html, body").animate({
-           scrollTop: $(section).offset().top
-       }, 700);
+  counter++;
+}
 
        return false;
 }));
