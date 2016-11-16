@@ -72,13 +72,23 @@
 }
 
 body {
-  background: #FED700;
+  background: #ffd63e;
   font-family: 'Theinhardt';
   font-weight: normal;
   height: 100%;
   font-size: 23px;
   line-height: 1.174em;
-  color: #3F2B25;
+  color: #35231f;
+}
+
+#splashBG {
+  position: fixed;
+  z-index: -101;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: url(images/nose2.jpg) no-repeat;
+  background-size: cover;
 }
 
 i {
@@ -89,8 +99,104 @@ h1 {
   font-size: 6.5em;
   font-family: 'TitlingGothicFB Skyline', sans-serif;
   font-weight: bold;
-  line-height: 1.2em;
+  line-height: 1em;
   text-transform: uppercase;
+}
+
+#gradientBG {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -50;
+  background: -moz-linear-gradient(top, rgba(254,215,0,1) 0%, rgba(254,215,0,0) 92%, rgba(254,215,0,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(254,215,0,1) 0%,rgba(254,215,0,0) 92%,rgba(254,215,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(254,215,0,1) 0%,rgba(254,215,0,0) 92%,rgba(254,215,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fed700', endColorstr='#00fed700',GradientType=0 ); /* IE6-9 */
+}
+
+#progress {
+  position: fixed;
+  width: 100%;
+  height: .5em;
+  top: 0;
+  z-index: 999;
+}
+
+#progress-marker {
+  width: 0;
+  height: 100%;
+  background: #35231f;
+  transition: width 1s ease-in-out;
+}
+
+#nav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  height: .609em;
+}
+
+#nav li {
+  display: inline-block;
+  margin: .75em 1em;
+}
+
+#nav li a {
+  cursor: pointer;
+  user-select: none;
+}
+
+#nav li a, #nav li a:visited {
+  font-family: 'TitlingGothicFB Normal', sans-serif;
+  font-weight: bold;
+  font-size: .609em;
+  text-decoration: none;
+  color: #35231f;
+  transition: color .15s ease-in-out;
+}
+
+#nav li a:hover {
+  color: #fff;
+}
+
+#about-overlay, #links-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999;
+  background: #35231f;
+  top: 0;
+  opacity: .97;
+  display: none;
+}
+
+#about-overlay p, #links-overlay p {
+  font-size: 1em;
+  color: #ffd63e;
+  margin: 2em auto;
+  padding: 0 2em;
+  max-width: 600px;
+  line-height: 1.5em;
+}
+
+.closeBTN {
+  cursor: pointer;
+  user-select: none;
+  font-size: 2em;
+  color: #ffd63e;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: .5em;
+  transition: color .25s ease-in-out;
+}
+
+.closeBTN:hover {
+  color: #fff;
 }
 
 #chatList {
@@ -109,14 +215,14 @@ h1 {
   -webkit-border-radius: 0.652em;
   -moz-border-radius: 0.652em;
   border-radius: 0.652em;
-  border: 1px solid #D1A61B;
+  border: 1px solid #cf847b;
   margin: 0.435em 0;
   padding: 0 .8em;
   display: inline-block;
 }
 
 #chatList li .response {
-  background: #FFEF21;
+  background: #ffd63e;
   max-width: 66%;
 }
 
@@ -141,10 +247,14 @@ h1 {
 
 
 #chatList li .speech:before  {
-    border-right: 2.217em solid #D1A61B;
+    border-right: 2.217em solid #cf847b;
     bottom: -0.5em;
     right: -1px;
     z-index: -1;
+}
+
+#chatList li h1 {
+  margin-top: 1em;
 }
 
 
@@ -164,13 +274,14 @@ a.sqButton, a.rdButton {
   left: 50%;
   transform: translate(-50%, 0);
   bottom: 0;
-  background: #3F2B25;
-  color: #FFEF21;
+  background: #35231f;
+  color: #ffd63e;
   box-shadow: 1px 1px 1px 0px rgba(63, 43, 37, 0.3);
   margin: .87em 0;
   cursor: pointer;
   transition: color .25s ease-in-out, box-shadow .25s ease-in-out;
   user-select: none;
+  opacity: 1;
 }
 
 a.sqButton {
@@ -185,10 +296,21 @@ a.sqButton {
 
 a.sqButton:hover {
   color: #ffffff;
+  box-shadow: 0px 1px 1px 1px rgba(63, 43, 37, 0.2);
 }
 
-a.sqButton:hover, a.rdButton:hover {
-  box-shadow: 1px 2px 3px 2px rgba(63, 43, 37, 0.2);
+a.rdButton img {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+}
+
+a.rdButton:hover img {
+  opacity: .85;
+
+}
+
+a.rdButton:hover {
+box-shadow: 0px 0px 1.5px 2px rgba(63, 43, 37, 0.2);
 }
 
 a.rdButton {
@@ -225,7 +347,7 @@ a.rdButton {
 }
 
 #splash h1 {
-  margin-top: .4em;
+  margin-top: .6em;
   font-size: 8em;
   text-align: center;
   line-height: .75em;
@@ -243,7 +365,7 @@ a.rdButton {
 
 #splashPadder {
   display: none;
-  height: 100%;
+  height: 50%;
 }
 
 
@@ -261,8 +383,9 @@ video#bgvid {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    /*background: url(polina.jpg) no-repeat;*/
+    background: url(images/nose.jpg) no-repeat;
     background-size: cover;
+    display: none;
 }
 
 

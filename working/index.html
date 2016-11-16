@@ -13,10 +13,38 @@
 
 <body>
 
-  <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+<div id="splashBG"></div>
+
+  <video playsinline autoplay muted loop id="bgvid">
     <!--<source src="polina.webm" type="video/webm">-->
-    <!--<source src="vid/bird.mp4" type="video/mp4">-->
+    <source src="" type="video/mp4">
 </video>
+
+<!--<div id="gradientBG"></div>-->
+
+<div id="about-overlay">
+<a class="closeBTN" onclick="closeAbout()">&times;</a>
+
+<p>Technology augments our minds, delivering the entire world at out fingertips. Yet, this experience is contained within an infinite array of screens and windows and apps and buttons, making it no more than a primitive tool at best—at worst, a massive drain on time and resources.The internet is more like the written language in the nature of its being—an evolving system that exists across multiple platforms. Like the brain, the digital space shouldn't need prodded and prompted for information.</p>
+
+<p>Technology augments our minds, delivering the entire world at out fingertips. Yet, this experience is contained within an infinite array of screens and windows and apps and buttons, making it no more than a primitive tool at best—at worst, a massive drain on time and resources.The internet is more like the written language in the nature of its being—an evolving system that exists across multiple platforms. Like the brain, the digital space shouldn't need prodded and prompted for information.</p>
+
+</div>
+
+<div id="links-overlay">
+  <a class="closeBTN" onclick="closeLinks()">&times;</a>
+
+</div>
+
+<div id="progress">
+<div id="progress-marker"></div>
+</div>
+
+<ul id="nav">
+  <li><a onclick="openAbout()">ABOUT</a></li>
+  <li><a onclick="openLinks()">LINKS</a></li>
+</ul>
+
 
   <ul id="chatList">
     <li class="big-item" id="splash" >
@@ -31,7 +59,7 @@
   <!--<a id="button" class="sqButton">This is a thing...</a>-->
 
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="scripts/content.js"></script>
   <script type="text/javascript" src="scripts/chat.js"></script>
 </body>

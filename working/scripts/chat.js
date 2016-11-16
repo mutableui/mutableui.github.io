@@ -25,10 +25,23 @@ var f = (function () {
 $(document).ready(f);
 $(window).on('resize', f);
 
+function openAbout() {
+  $('#about-overlay').fadeIn(300);
+};
+function openLinks() {
+  $('#links-overlay').fadeIn(300);
+};
+function closeAbout() {
+  $('#about-overlay').fadeOut(300);
+};
+function closeLinks() {
+  $('#links-overlay').fadeOut(300);
+};
+
 $('body').on("click", ".firstButton", (function(){
-
-$('#splashPadder').height(windowHeight).show();
-
+$('#splashPadder').show();
+$('#bgvid').fadeIn(300);
+$('#gradientBG').fadeIn(350);
 }));
 
 $('body').on("click", "#button", (function(e){
@@ -38,21 +51,23 @@ $('body,html').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup touc
                 $("html,body").stop();
             }
         })
+$('#progress-marker').css('width', windowWidth*counter/data.length);
 $('#button').fadeOut(100);
 /*VISIBLE FUNCTIONS GO HERE*/
 if (data[counter].bigHead == 1) {
-  var vidDisplay = "<source src=\"vid/"+data[counter].vidContent+".mp4\" type=\"video/mp4\">"
+  var vidDisplay = ""
 
   $('#chatList').find(' > li:nth-last-child(1)').before("<li id=\""+data[counter].vidContent+"\" class=\"big-item\" style = \"height:"+bigHeadHeight+"\"; ><div class=\"big-cont\"><h1>"+data[counter].textContent+"</h1></div></li><div style=\"clear:both\"></div>");
   $('.big-item').css('height', bigHeadHeight);
   $('.big-item').css('margin-left', bigOffset);
 
-  $('#bgvid').html(vidDisplay);
+$("#bgvid").find('source').attr("src", "vid/"+data[counter].vidContent+".mp4");
+  $('#bgvid').load();
 
   var section = $('#chatList li').last();
       $("html, body").animate({
           scrollTop: $(section).offset().top
-      }, 700);
+      }, 1000);
 
     setTimeout(function(){
       afterPost();
@@ -89,13 +104,13 @@ function postString(callback) {
               $("html, body").animate({
                   scrollTop: $(section).offset().top
               }, 700);
-          }, 1500 * i);
+          }, 1300 * i);
       }(i));
 
   };
   setTimeout(function(){
     callback();
-  }, 1500*data[dataIndex].textContent.length);
+  }, 1300*data[dataIndex].textContent.length);
 
 }
 
