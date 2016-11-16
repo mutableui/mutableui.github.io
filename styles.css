@@ -95,6 +95,10 @@ i {
   font-style: italic;
 }
 
+b {
+	font-weight: bold;
+}
+
 h1 {
   font-size: 6.5em;
   font-family: 'TitlingGothicFB Skyline', sans-serif;
@@ -182,7 +186,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fed700', end
 }
 
 #about-overlay p, #links-overlay p {
-  font-size: 1em;
+  font-size: .9em;
   color: #ffd63e;
   line-height: 1.5em;
   display: table-cell;
