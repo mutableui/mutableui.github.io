@@ -173,13 +173,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fed700', end
   display: none;
 }
 
+#about-overlay .text-container, #links-overlay .text-container {
+  height: 100%;
+  display: table;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
 #about-overlay p, #links-overlay p {
   font-size: 1em;
   color: #ffd63e;
-  margin: 2em auto;
-  padding: 0 2em;
-  max-width: 600px;
   line-height: 1.5em;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#about-overlay p a, #links-overlay p a, #about-overlay p a:visited, #links-overlay p a:visited {
+  text-decoration: underline;
+  color: #FED63F;
+  transition: color .25s ease-in-out;
+}
+
+#about-overlay p a:hover, #links-overlay p a:hover {
+  color: #fff;
 }
 
 .closeBTN {
@@ -232,7 +249,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fed700', end
   background: #ffffff;
   float: right;
   position: relative;
-
 }
 
 .speech:after, .speech:before  {
@@ -243,10 +259,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fed700', end
     content: '';
     position: absolute;
     right: 0;
+    animation: popout .25s ease-in;
+    -webkit-animation: popout .25s ease;
+    transform-origin: right bottom;
 }
 
-
 #chatList li .speech:before  {
+    position: absolute;
     border-right: 2.217em solid #cf847b;
     bottom: -0.5em;
     right: -1px;
@@ -254,7 +273,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fed700', end
 }
 
 #chatList li h1 {
-  margin-top: 1em;
+  margin-top: .6em;
 }
 
 

@@ -1,0 +1,45 @@
+@font-face {
+	font-family: 'TitlingGothicFB Normal';
+	src: url('/fonts/TitlingGothicFBNormal-Bold.eot');
+	src: url('/fonts/TitlingGothicFBNormal-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/TitlingGothicFBNormal-Bold.woff') format('woff'),
+		url('/fonts/TitlingGothicFBNormal-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TitlingGothicFB Normal';
+	src: url('/fonts/TitlingGothicFBNormal-Regular.eot');
+	src: url('/fonts/TitlingGothicFBNormal-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/TitlingGothicFBNormal-Regular.woff') format('woff'),
+		url('/fonts/TitlingGothicFBNormal-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body {
+  font-family: 'TitlingGothicFB Normal', Helvetica, sans-serif;;
+  background: #FFEF21;
+  color: #3F2B25;
+}
+
+#container {
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  text-align: center;
+  height: 50px;
+  top: 50%;
+  margin-top: -25px;
+}
+
+p {
+  text-align: center;
+}
+
+p.bold {
+  font-weight: bold;
+}

@@ -51,7 +51,11 @@ $('body,html').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup touc
                 $("html,body").stop();
             }
         })
-$('#progress-marker').css('width', windowWidth*counter/data.length);
+if (counter == 1) {
+  $('#splashBG').hide();
+}
+
+$('#progress-marker').css('width', windowWidth*counter/(data.length-1));
 $('#button').fadeOut(100);
 /*VISIBLE FUNCTIONS GO HERE*/
 if (data[counter].bigHead == 1) {
@@ -86,7 +90,7 @@ function postString(callback) {
   var paraType = [];
 
   for(i = 0; i < data[dataIndex].textContent.length; i++){
-    if (data[dataIndex].textContent[i].length < 20) {
+    if (data[dataIndex].textContent[i].length < 25) {
       paraType.push("h2");
     }
     else {
@@ -126,7 +130,13 @@ else {
   buttonClass = "sqButton";
   buttonDisplay = data[counter].buttonContent.bText;
 }
+
+if (data[counter].buttonContent.bText == "xxxend") {
+  $('#button').hide();
+}
+else {
   $('#button').removeClass().addClass(buttonClass).html(buttonDisplay).fadeIn(500);
+}
   counter++;
 }
 

@@ -1,45 +1,443 @@
+/*FONTS*/
+/*Titling Gothic*/
 @font-face {
 	font-family: 'TitlingGothicFB Normal';
-	src: url('/fonts/TitlingGothicFBNormal-Bold.eot');
-	src: url('/fonts/TitlingGothicFBNormal-Bold.eot?#iefix') format('embedded-opentype'),
-		url('/fonts/TitlingGothicFBNormal-Bold.woff') format('woff'),
-		url('/fonts/TitlingGothicFBNormal-Bold.ttf') format('truetype');
+	src: url('fonts/TitlingGothicFBNormal-Medium.eot');
+	src: url('fonts/TitlingGothicFBNormal-Medium.eot?#iefix') format('embedded-opentype'),
+		url('fonts/TitlingGothicFBNormal-Medium.woff') format('woff'),
+		url('fonts/TitlingGothicFBNormal-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TitlingGothicFB Normal';
+	src: url('fonts/TitlingGothicFBNormal-Bold.eot');
+	src: url('fonts/TitlingGothicFBNormal-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/TitlingGothicFBNormal-Bold.woff') format('woff'),
+		url('fonts/TitlingGothicFBNormal-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'TitlingGothicFB Normal';
-	src: url('/fonts/TitlingGothicFBNormal-Regular.eot');
-	src: url('/fonts/TitlingGothicFBNormal-Regular.eot?#iefix') format('embedded-opentype'),
-		url('/fonts/TitlingGothicFBNormal-Regular.woff') format('woff'),
-		url('/fonts/TitlingGothicFBNormal-Regular.ttf') format('truetype');
+	font-family: 'TitlingGothicFB Skyline';
+	src: url('fonts/TitlingGothicFBSkyline-Bold.eot');
+	src: url('fonts/TitlingGothicFBSkyline-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/TitlingGothicFBSkyline-Bold.woff') format('woff'),
+		url('fonts/TitlingGothicFBSkyline-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/*THEINHARDT*/
+@font-face {
+	font-family: 'Theinhardt';
+	src: url('fonts/Theinhardt-Regular.eot');
+	src: url('fonts/Theinhardt-Regular.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Theinhardt-Regular.woff') format('woff'),
+		url('fonts/Theinhardt-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Theinhardt';
+	src: url('fonts/Theinhardt-RegularItalic.eot');
+	src: url('fonts/Theinhardt-RegularItalic.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Theinhardt-RegularItalic.woff') format('woff'),
+		url('fonts/Theinhardt-RegularItalic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Theinhardt';
+	src: url('fonts/Theinhardt-Bold.eot');
+	src: url('fonts/Theinhardt-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Theinhardt-Bold.woff') format('woff'),
+		url('fonts/Theinhardt-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Theinhardt';
+	src: url('fonts/Theinhardt-BoldItalic.eot');
+	src: url('fonts/Theinhardt-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Theinhardt-BoldItalic.woff') format('woff'),
+		url('fonts/Theinhardt-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
 
 body {
-  font-family: 'TitlingGothicFB Normal', Helvetica, sans-serif;;
-  background: #FFEF21;
-  color: #3F2B25;
+  background: #ffd63e;
+  font-family: 'Theinhardt';
+  font-weight: normal;
+  height: 100%;
+  font-size: 23px;
+  line-height: 1.174em;
+  color: #35231f;
 }
 
-#container {
-  width: 300px;
-  position: absolute;
-  left: 50%;
-  margin-left: -150px;
-  text-align: center;
-  height: 50px;
-  top: 50%;
-  margin-top: -25px;
+#splashBG {
+  position: fixed;
+  z-index: -101;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: url(images/nose2.jpg) no-repeat;
+  background-size: cover;
 }
 
-p {
-  text-align: center;
+i {
+  font-style: italic;
 }
 
-p.bold {
+h1 {
+  font-size: 6.5em;
+  font-family: 'TitlingGothicFB Skyline', sans-serif;
   font-weight: bold;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+#gradientBG {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -50;
+  background: -moz-linear-gradient(top, rgba(254,215,0,1) 0%, rgba(254,215,0,0) 92%, rgba(254,215,0,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(254,215,0,1) 0%,rgba(254,215,0,0) 92%,rgba(254,215,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(254,215,0,1) 0%,rgba(254,215,0,0) 92%,rgba(254,215,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fed700', endColorstr='#00fed700',GradientType=0 ); /* IE6-9 */
+}
+
+#progress {
+  position: fixed;
+  width: 100%;
+  height: .5em;
+  top: 0;
+  z-index: 999;
+}
+
+#progress-marker {
+  width: 0;
+  height: 100%;
+  background: #35231f;
+  transition: width 1s ease-in-out;
+}
+
+#nav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  height: .609em;
+}
+
+#nav li {
+  display: inline-block;
+  margin: .75em 1em;
+}
+
+#nav li a {
+  cursor: pointer;
+  user-select: none;
+}
+
+#nav li a, #nav li a:visited {
+  font-family: 'TitlingGothicFB Normal', sans-serif;
+  font-weight: bold;
+  font-size: .609em;
+  text-decoration: none;
+  color: #35231f;
+  transition: color .15s ease-in-out;
+}
+
+#nav li a:hover {
+  color: #fff;
+}
+
+#about-overlay, #links-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999;
+  background: #35231f;
+  top: 0;
+  opacity: .97;
+  display: none;
+}
+
+#about-overlay .text-container, #links-overlay .text-container {
+  height: 100%;
+  display: table;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+#about-overlay p, #links-overlay p {
+  font-size: 1em;
+  color: #ffd63e;
+  line-height: 1.5em;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#about-overlay p a, #links-overlay p a, #about-overlay p a:visited, #links-overlay p a:visited {
+  text-decoration: underline;
+  color: #FED63F;
+  transition: color .25s ease-in-out;
+}
+
+#about-overlay p a:hover, #links-overlay p a:hover {
+  color: #fff;
+}
+
+.closeBTN {
+  cursor: pointer;
+  user-select: none;
+  font-size: 2em;
+  color: #ffd63e;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: .5em;
+  transition: color .25s ease-in-out;
+}
+
+.closeBTN:hover {
+  color: #fff;
+}
+
+#chatList {
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+#chatList li {
+  width: 100%;
+}
+
+#chatList li .speech, #chatList li .response {
+  -webkit-border-radius: 0.652em;
+  -moz-border-radius: 0.652em;
+  border-radius: 0.652em;
+  border: 1px solid #cf847b;
+  margin: 0.435em 0;
+  padding: 0 .8em;
+  display: inline-block;
+}
+
+#chatList li .response {
+  background: #ffd63e;
+  max-width: 66%;
+}
+
+#chatList li .speech {
+  line-height: 2.174rem;
+  display: inline-block;
+  background: #ffffff;
+  float: right;
+  position: relative;
+}
+
+.speech:after, .speech:before  {
+    display: block;
+    border-bottom: 1.304em solid transparent;
+    border-right: 2.174em solid #fff;
+    bottom: -10px;
+    content: '';
+    position: absolute;
+    right: 0;
+    animation: popout .25s ease-in;
+    -webkit-animation: popout .25s ease;
+    transform-origin: right bottom;
+}
+
+#chatList li .speech:before  {
+    position: absolute;
+    border-right: 2.217em solid #cf847b;
+    bottom: -0.5em;
+    right: -1px;
+    z-index: -1;
+}
+
+#chatList li h1 {
+  margin-top: .6em;
+}
+
+
+#chatList li p {
+  padding: 1.1em 0 .783em 0;
+}
+
+#chatList li h2 {
+  font-size: 1.478em;
+  line-height: 1.478em;
+  padding: .6em 0 .2em 0;
+  font-weight: bold;
+}
+
+a.sqButton, a.rdButton {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  background: #35231f;
+  color: #ffd63e;
+  box-shadow: 1px 1px 1px 0px rgba(63, 43, 37, 0.3);
+  margin: .87em 0;
+  cursor: pointer;
+  transition: color .25s ease-in-out, box-shadow .25s ease-in-out;
+  user-select: none;
+  opacity: 1;
+}
+
+a.sqButton {
+  font-size: 1.478em;
+  line-height: 1em;
+  padding: .765em .441em .529em;
+  font-weight: bold;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+a.sqButton:hover {
+  color: #ffffff;
+  box-shadow: 0px 1px 1px 1px rgba(63, 43, 37, 0.2);
+}
+
+a.rdButton img {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+}
+
+a.rdButton:hover img {
+  opacity: .85;
+
+}
+
+a.rdButton:hover {
+box-shadow: 0px 0px 1.5px 2px rgba(63, 43, 37, 0.2);
+}
+
+a.rdButton {
+  width: 4.783em;
+  height: 4.783em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#button img {
+  width: 60%;
+  height: 60%;
+  padding: 20%;
+}
+
+.big-item {
+  margin: 0.435em 0;
+}
+
+.big-cont {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  display: block;
+  margin: 0 ;
+}
+
+.big-cont h1 {
+  margin: .1em;
+}
+
+#splash {
+}
+
+#splash h1 {
+  margin-top: .6em;
+  font-size: 8em;
+  text-align: center;
+  line-height: .75em;
+}
+
+#question {
+  display: block;
+  font-family: 'TitlingGothicFB Normal', sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  font-size: .08em;
+  line-height: 2em;
+  margin-bottom: 2em;
+}
+
+#splashPadder {
+  display: none;
+  height: 50%;
+}
+
+
+/* ############# VIDEO BG ###################### */
+video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(images/nose.jpg) no-repeat;
+    background-size: cover;
+    display: none;
+}
+
+
+
+/* ############## ANIMATION #################### */
+.popoutR {
+  transform-origin: right bottom;
+}
+
+.popoutL {
+  transform-origin: left center;
+}
+
+.popout {
+    animation: popout .25s ease-in;
+    -webkit-animation: popout .25s ease;
+}
+@keyframes popout {
+    from{opacity:0; transform:scale(0)}
+    75%{opacity:100; transform:scale(1.1)}
+    to{opacity:100; transform:scale(1)}
+}
+@-webkit-keyframes popout {
+    from{-webkit-opacity:0; -webkit-transform:scale(0)}
+    75%{-webkit-opacity:100; -webkit-transform:scale(1.1)}
+    to{-webkit-opacity:100; -webkit-transform:scale(1)}
+}
+
+
+/* ############### RESPONSIVE #################### */
+
+@media only screen and (max-width : 480px) {
+ body {
+   font-size: 14px;
+ }
 }
