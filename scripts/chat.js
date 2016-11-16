@@ -51,8 +51,8 @@ $('body,html').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup touc
                 $("html,body").stop();
             }
         })
-if (counter == 1) {
-  $('#splashBG').hide();
+if (counter == 0) {
+  $('#splashBG').fadeOut(500);
 }
 
 $('#progress-marker').css('width', windowWidth*counter/(data.length-1));
